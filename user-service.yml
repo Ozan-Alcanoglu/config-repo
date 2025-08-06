@@ -1,3 +1,20 @@
 server:
   port: 8081
 
+spring:
+  application:
+    name: user-service
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: user-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "feign_demo.entity"
+
+  euraka:
+    client:
+       service-url:
+          defaultZone: http://localhost:8761/eureka
