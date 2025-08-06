@@ -14,7 +14,7 @@ spring:
       properties:
         spring.json.trusted.packages: "feign_demo.entity"
 
-  eureka:
-    client:
-       service-url:
-          defaultZone: http://localhost:8761/eureka
+eureka:
+  client:
+     service-url:
+        defaultZone: http://localhost:8761/eureka
