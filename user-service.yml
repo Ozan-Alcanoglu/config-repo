@@ -15,6 +15,8 @@ spring:
         spring.json.trusted.packages: "feign_demo.entity"
 
 eureka:
+  instance:
+    prefer-ip-address: true
 
   client:
      service-url:
