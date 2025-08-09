@@ -27,3 +27,9 @@ resilience4j:
         minimumNumberOfCalls: 5
         writableStackTraceEnabled: true
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
