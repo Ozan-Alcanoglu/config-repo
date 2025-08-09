@@ -26,11 +26,4 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 3
         minimumNumberOfCalls: 5
         writableStackTraceEnabled: true
-feign:
-  circuitbreaker:
-    enabled: true
-  client:
-    config:
-      default:
-        connect-timeout: 2000
-        read-timeout: 5000
+
