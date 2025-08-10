@@ -38,3 +38,11 @@ logging:
   level:
     io.github.resilience4j: DEBUG
     org.springframework.cloud.openfeign: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
