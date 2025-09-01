@@ -22,6 +22,12 @@ eureka:
      service-url:
         defaultZone: http://localhost:8761/eureka
 
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: '{"time":"%d{yyyy-MM-dd HH:mm:ss}", "level":"%p", "service":"${spring.application.name}", "message":"%m"}%n'
+
 management:
   endpoints:
     web:
