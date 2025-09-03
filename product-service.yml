@@ -35,6 +35,8 @@ resilience4j:
         writableStackTraceEnabled: true
 
 logging:
+  file:
+    name: ./logs/product-service/product-service.log
   level:
     root: INFO
   pattern:
