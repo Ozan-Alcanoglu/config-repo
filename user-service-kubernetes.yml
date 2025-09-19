@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: user-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "feign_demo.entity"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+     service-url:
+        defaultZone: http://eureka-server:8761/eureka
+
+logging:
+  file:
+    name: ./logs/user-service/user-service.log
+  level:
+    root: INFO
+  pattern:
+    console: '{"time":"%d{yyyy-MM-dd HH:mm:ss}", "level":"%p", "service":"${spring.application.name}", "message":"%m"}%n'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
